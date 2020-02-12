@@ -7,18 +7,25 @@ class App extends React.Component {
     // the state object holds information that can be displayed to the user and updated throughout the program
     this.state = {
       // 'phrase' is the text entered by the user - right now there are some test words hard coded to make the process of testing your code a bit faster and easier
-      // ACTION ITEM: when you are ready for your full user experience, delete the test words so phrase is assigned an empty string
-      phrase: 'every through yummy squeal queen fry',
+
+      phrase: '',
       // 'phraseTranslated' is what the user will see appear on the page as Pig Latin, it starts as the preset message and updates when your user clicks the 'submit' button
-      phraseTranslated: 'This is where your translated sentence will appear.'
+      phraseTranslated: ''
     }
   }
 
   // The 'myPigLatinCodeHere' function is where you will put your logic to convert the sentence entered by the user to Pig Latin.
 
   myPigLatinCodeHere = () => {
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    // variable to indicate the location of the vowel in the array
+    let vowelIndex = 0;
+
     // the variable 'userInput' will contain the text input from the user
     let userInput = this.state.phrase;
+
+    // variable to store translated currentWord
+    let pigLatinWord = '';
 
     // as you modify and create Pig Latin-ified words, push them into 'translatedWordsArray'
     let translatedWordsArray = [];
@@ -28,14 +35,28 @@ class App extends React.Component {
 
     // now that we have an array of words, we can map over the array and access each word
     splitUserInput.map(currentWord => {
-      // ACTION ITEM: use 'currentWord' as a starting point for your code
+      // use vowels array to see if the 1st letter of currentWord is a vowel
+      if (currentWord[0] === 'q' && currentWord[1] === 'u') {
+          console.log(pigLatinWord = `${currentWord.slice(2)}-${currentWord.slice(0, 2)}ay`);
+      } else if (currentWord[1] === 'q' && currentWord[2] === 'u') {
+          console.log(pigLatinWord = `${currentWord.slice(3)}-${currentWord.slice(0, 3)}ay`)
+      } else if (vowels.includes(currentWord[0])) {
+        pigLatinWord = `${currentWord}-way`;
+      } else {
+          // use a for of loop to go through each array item until it reaches a vowel
+          for (let letter of currentWord) {
+            // vowels array to find where the 1st vowel appear within the
+            if (vowels.includes(letter)) {
+              vowelIndex = currentWord.indexOf(letter);
+              // since we found out where the vowel is, we break out so it stops running
+              break;
+            }
+          }
+          // storing the translated word
+          console.log(pigLatinWord = `${currentWord.slice(vowelIndex)}-${currentWord.slice(0, vowelIndex)}ay`);
+        }
 
-
-
-
-
-      // ACTION ITEM: change the value of currentWord in the push method to the name of whatever variable you made containing your Pig Latin'd word
-      return translatedWordsArray.push(currentWord)
+      return translatedWordsArray.push(pigLatinWord);
     })
 
 
