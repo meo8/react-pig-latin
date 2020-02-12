@@ -1,0 +1,44 @@
+body{
+  margin: 2em;
+  font-family: 'Josefin Sans', sans-serif;
+  align-items: center;
+  text-align: center;
+}
+h1{
+  text-align: center;
+  font-size: 4em;
+}
+button{
+  margin: 1em;
+  border-radius: .25em;
+  font-size: 75%;
+  padding: 1em;
+}
+footer{
+  padding: 2em;
+}
+
+#butcherPig{
+  width: 12em;
+  }
+#pigImage{
+  text-align: center;
+}
+#inputPhrase{
+  font-size: 1em;
+  height: 5em;
+  width: 20em;
+  text-align: center;
+}
+
+.box{
+  background-color: #606060;
+  color: #fff;
+  border-radius: .2em;
+  padding: 1em;
+  font-size: 150%;
+}
+.header{
+  background-color: #FFF;
+  padding: 1em;
+}
